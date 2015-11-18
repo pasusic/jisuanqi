@@ -1,0 +1,49 @@
+1.登录:http://123.56.100.145:8080/jisuanqi/login
+	     参数:
+	      username:用户名
+	      password:密码
+	      返回:data:数据
+	      status:状态码 0代表调用失败   1代表调用成功
+	      tips:消息
+	     示例：{"data":null,"status":"1","tips":"登录成功"}   
+     
+2.注册:http://123.56.100.145:8080/jisuanqi/regist
+	     参数:
+	      username:用户名
+	      password:密码
+	     返回:data:数据
+	      status:状态码 0代表调用失败   1代表调用成功
+	      tips:消息
+	     示例：{"data":null,"status":"1","tips":"注册成功"}
+     
+3.登出:http://123.56.100.145:8080/jisuanqi/logout
+	     参数:
+	      username:用户名
+	     返回:data:数据
+	      status:状态码 0代表调用失败   1代表调用成功
+	      tips:消息
+	     示例：{"data":null,"status":"1","tips":"注销成功"}
+	     
+4.获取验证码:http://123.56.100.145:8080/jisuanqi/getNumber
+               参数:
+          username:用户名
+               返回:data:数据
+	      status:状态码 0代表调用失败   1代表调用成功
+	      tips:消息
+	     示例：{"data":null,"status":"1","tips":"发送成功"} 
+	          
+5.发送验证码:http://123.56.100.145:8080/jisuanqi/checkNumber
+	    参数: username:用户名
+	       number:验证码
+	    返回: data:数据
+	      status:状态码 0代表调用失败   1代表调用成功
+	      tips:消息
+	     示例：{"data":null,"status":"1","tips":"验证成功"}   
+	     
+6.修改密码:http://123.56.100.145:8080/jisuanqi/revisePassword
+   	   参数:  username:用户名
+	       newPassword:新密码
+	    返回: data:数据
+	      status:状态码 0代表调用失败   1代表调用成功
+	      tips:消息
+	     示例：{"data":null,"status":"1","tips":"修改密码成功"}  
