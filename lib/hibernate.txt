@@ -1,0 +1,58 @@
+体系结构
+1.主配置文件：hibernate.cfg.xml
+	      数据库连接参数，框架参数，映射关系文件
+
+2.实体类
+
+
+3.映射关系文件：实体类.hbm.xml
+	      实体类和数据表的对应关系，实体类的属性和表中字段之间的对应关系
+
+4.底层API：基于ORM思想，访问数据库，即解析映射文件，动态生成SQL语句，自动将属性和字段映射
+
+
+
+常用API
+1.Configuration：加载主配置文件，加载映射关系文件
+		 Configuration cfg = new Configuration();
+		 cfg.configure("/hibernate.cfg.xml");
+
+2.SessionFactory:负责创建Session对象
+		 SessionFactory sf = cfg.buildSessionFactory();
+		 Session session = sf.openSession();
+
+3.Transaction:负责事物控制
+	      Transaction tx = session.beginTransaction();
+
+4.Query:负责执行特殊查询
+	Query query = session.createQuery(hql);
+	List<Emp> emps = query.list();
+
+开发步骤
+1.导入Hibernate包，导入数据库驱动包
+2.导入主配置文件hibernate.cfg.xml
+3.创建实体类
+4.创建映射关系文件
+5.使用Hibernate常用API执行增删改查
+
+
+一级缓存：缓存对象
+	  每个session都有自己的缓存区
+	  查询数据---一级缓存---数据库DB
+	  默认开启
+
+二级缓存：缓存对象
+	  每个SessionFactory的缓存
+	  session之间可以共享
+	  开启步骤：1.导入二级缓存开发包
+		    2.导入二级缓存配置文件
+		    3.在主配置文件hibernate.cfg.xml中开启二级缓存，指定采用的二级缓存驱动类
+		    4.在映射关系文件中，开启当前对象的二级缓存支持
+
+查询缓存：可以缓存对象、数字等任何类型
+	  hql为key，查询结果为value
+	  特殊的二级缓存
+	  开启步骤：1.开启二级缓存
+		    2.在hibernate.cfg.xml中开启查询缓存
+		    3.在查询代码执行前，指定开启查询缓存
+	  

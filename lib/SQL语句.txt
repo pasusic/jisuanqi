@@ -1,0 +1,21 @@
+1.自增长:auto_increment
+
+2.主键:primary key
+
+3.非空:not null
+
+4.常用类型:
+	int或integer  大整数
+	bigint	      极大整数
+	float  	      单精度浮点数
+	double 	      双精度浮点数
+	
+
+	char	      定长字符串
+	varchar	      变长字符串
+	text	      长文本数据
+
+	
+	date	      日期
+	timestamp     日期和时间
+	time	      时间

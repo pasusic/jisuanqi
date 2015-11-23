@@ -1,0 +1,26 @@
+
+1.对应WEB-INF文件夹下的classes目录
+  classpath:只从路径查找
+  classpath*：从路径和jar文件中查找
+
+2.不需要再使用xml映射了
+  注解：@Entity：实体类对应数据库中的表
+	@Table:name=“emp”,catalog="emps"表示对应emp表，emps数据库，可以省略
+	@Id：主键
+	@GeneratedValue：自动增长1
+	@Column：标识属性对应的字段
+
+3.openSession：永远创建新的session，必须手动关闭
+  getCurrentSession：创建的session会自动绑定到当前线程，如果当前线程里有session，就直接使用
+
+4.常用二级缓存框架：EhCache
+
+5.共享锁、独占锁、悲观锁机制，解决事务并发问题，第一类、第二类丢失更新等
+  LocakOptions.UPGRADE悲观锁
+  乐观锁：使用version等
+
+6.服务器模型：单线程模型：阻塞BIO，收到一个请求就处理，这个时候不能处理新的请求
+	      多线程模型：阻塞BIO，收到一个请求就新开一个线程去处理，解决了主线程阻塞的问题，但有一定的并发量，使用线程池解决频繁创建线程的问题，如果大量请求，则请求会排队等待
+	      NIO模型：非阻塞，基于IO多路复用技术，框架如：Netty，MINA等
+	      Tomcat默认采用BIO模式，可以采用NIO模式，需要配置
+	      

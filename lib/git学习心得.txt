@@ -1,0 +1,27 @@
+1.当前目录下初始化一个仓库: git init
+2.添加文件到git仓库:git add "文件名"
+		    git commit -m "信息"
+3.查看工作区状态:git status
+4.查看修改内容: git diff
+5.版本回退:git reset --hard "版本号"
+6.查看文件内容: cat "文件名"
+7.查看提交历史:git log
+8.查看命令历史:git reflog
+9.恢复文件:git checkout -- "文件名"
+10.删除文件:git rm "文件名"
+11.关联github:git remote add origin git@github.com:pasusic/FirstProgram
+12.推送当前分支master:git push -u origin master
+13.查看分支:git branch
+14.创建分支:git branch <name>
+15.切换分支:git checkout <name>
+16.创建+切换分支:git checkout -b <name>
+17.合并某分支到当前分支:git merge <name>
+18.删除分支:git branch -d <name>
+19.暂时保存工作现场:git stash
+20.恢复工作现场:git stash pop
+21.丢弃一个没有被合并过的分支:git branch -D <name>
+22.分支:master主分支
+	dev开发分支
+	bug修复bug分支
+	feature新功能分支
+23.抓取分支:git pull
